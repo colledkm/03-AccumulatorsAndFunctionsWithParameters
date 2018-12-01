@@ -38,7 +38,7 @@ def main():
 def run_test_sum_of_digits():
     """ Tests the  sum_of_digits   function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function, as follows:
+    # DONE: 2. Implement this TEST function, as follows:
     #
     #  Step 1:  This TEST function tests the  sum_of_digits  function.
     #    So read the doc-string of the  sum_of_digits  function
@@ -80,15 +80,15 @@ def run_test_sum_of_digits():
     print('       actual:  ', answer)
 
     # Test 3:
-    expected = 23
+    expected = 24
     answer = sum_of_digits(6738)
-    print('Test 1 expected:', expected)
+    print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 4:
     expected = 9
     answer = sum_of_digits(9)
-    print('Test 1 expected:', expected)
+    print('Test 4 expected:', expected)
     print('       actual:  ', answer)
 
 def sum_of_digits(number):
@@ -127,7 +127,7 @@ def sum_of_digits(number):
 def run_test_digits_in_cube():
     """ Tests the   digits_in_cube   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function.
+    # DONE: 3. Implement this function.
     #   It TESTS the  digits_in_cube  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -152,6 +152,24 @@ def run_test_digits_in_cube():
     print('Testing the   digits_in_cube   function:')
     print('-----------------------------------------------------')
 
+    # Test 1:
+    expected = 0
+    answer = digits_in_cube(0)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 2:
+    expected = 8
+    answer = digits_in_cube(5)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 35
+    answer = digits_in_cube(254)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
 
 def digits_in_cube(n):
     """
@@ -162,8 +180,10 @@ def digits_in_cube(n):
       If the integer (n) is 5    (so n cubed is 125),
       this function returns (1 + 2 + 5), which is 8.
     """
+    cubed = n**3
+    return sum_of_digits(cubed)
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -177,7 +197,7 @@ def digits_in_cube(n):
 def run_test_digits_in_power():
     """ Tests the   digits_in_power   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this function.
+    # DONE: 5. Implement this function.
     #   It TESTS the  digits_in_power  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -188,6 +208,29 @@ def run_test_digits_in_power():
     print('Testing the   digits_in_power   function:')
     print('--------------------------------------------------')
 
+    # Test 1:
+    expected = 1
+    answer = digits_in_power(1,0)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+ # Test 2:
+    expected = 8
+    answer = digits_in_power(5,3)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+ # Test 3:
+    expected = 31
+    answer = digits_in_power(826,2)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
+ # Test 4:
+    expected = 1
+    answer = digits_in_power(1,26)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
 
 def digits_in_power(n, k):
     """
@@ -200,15 +243,16 @@ def digits_in_power(n, k):
       this function returns 18
       since 12 to the 3rd power is 1728 (whose digits sum to 18).
     """
+    x = n**k
+    return sum_of_digits(x)
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #
     ###########################################################################
     # IMPORTANT: CALL, as many times as needed,
     #    the    sum_of_digits    function that is DEFINED ABOVE.
     ###########################################################################
     # -------------------------------------------------------------------------
-
 
 def run_test_fancy_sums_of_digits():
     """ Tests the   fancy_sums_of_digits   function. """
@@ -225,6 +269,29 @@ def run_test_fancy_sums_of_digits():
     print('Testing the   fancy_sums_of_digits   function:')
     print('--------------------------------------------------')
 
+    # Test 1:
+    expected = 1
+    answer = fancy_sums_of_digits(1)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 2:
+    expected = 124309
+    answer = fancy_sums_of_digits(35)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 19084
+    answer = fancy_sums_of_digits(2)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 1
+    answer = fancy_sums_of_digits(10)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
     # -------------------------------------------------------------------------
     # HINT:  For your 1st test, consider  n=10.  Figure out BY HAND
     # the correct (expected) answer for that test case.  (It's easy.)
@@ -258,6 +325,10 @@ def fancy_sums_of_digits(n):
             -- the sum of the digits in (X ** Y) is 124309 (trust me!)
             -- so this function returns 124309.
     """
+    X=sum_of_digits(n**1000)
+    Y=sum_of_digits(n**999)
+    return sum_of_digits(X**Y)
+
     # -------------------------------------------------------------------------
     # TODO: 8. Implement and test this function.
     #

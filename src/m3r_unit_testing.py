@@ -77,7 +77,7 @@ def distance(point):
 main()
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #
 # READ the following, asking questions as needed.
 # When you believe that you understading what is says about UNIT TESTING,
@@ -130,6 +130,7 @@ main()
 #
 # RUN this program now.  Did the DISTANCE function pass its tests?
 # (Answer: it passed TWO of its tests but NOT all three.)
+#  It did not pass all of its tests.  Test 1 failed.
 #
 # Testing is a BIG topic, but UNIT TESTING like the code above is a start.
 #
